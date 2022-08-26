@@ -1,0 +1,9 @@
+
+<header>
+    <a href="/"><img id="logo" src="https://i.imgur.com/h0VUt0D.png" title="partycode-logo" /></a>
+        <% if(user){ %>
+            <a href="/logout"><img id="logout" src="https://i.imgur.com/tfXYqW7.png" title="logout" /></a>
+          <% } else{ %>  
+            <a href="/auth/google"><i><img id="google-login" id="image-google" src="https://i.imgur.com/SiRaYIJ.png" title="google-auth-button" /></i></a>
+         <% } %>
+</header>
