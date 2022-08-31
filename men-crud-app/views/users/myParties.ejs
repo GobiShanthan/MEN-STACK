@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>PartyPage</title>
+</head>
+<body>
+    <div class="main-container">
+        <div>
+            <%-  include('../partials/header')%>
+            <% if(user){ %>
+                <%-  include('../partials/sideMenu')%>
+              <% } else{ %>  
+               <%null%>
+             <% } %>
+              </div>
+    <div >
+    <div class="parties-container">
+        <% parties.forEach(party=>{%>
+            <div class="parties-card" key="<%=party._id%>">
+                <form method="post" action="/parties/<%=party._id%>/delete">
+                    <button id="delete-icon-button" type="submit">
+                        <img id="delete-icon" src="https://i.imgur.com/eeVLbU0.png" title="source: imgur.com" />
+                    </button>
+                    
+                <form>
+            <img id="card-img" src="<%=party.image%>" alt="<%=party.name%>"></img>       
+            <h3><%=party.name%></h3>
+            <h3><%=party.date%></h3>
+            <a href="/parties/<%=party.id%>" class="form-button"> Details</a>
+            </div>
+        <%})%>
+
+       
+    </div>
+</div>
+    </div>
+</body>
+</html>

@@ -5,13 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <title>PARTYCODE</title>
+    <title>UserPage</title>
 </head>
 <body>
-    <div class="main-container"> 
+    <div class="main-container">
         <div>
             <%-  include('../partials/header')%>
             <% if(user){ %>
@@ -19,17 +16,19 @@
               <% } else{ %>  
                <%null%>
              <% } %>
+              </div>
+    <!-- <div class="top-container">
+        <h1>USER PAGE</h1>
+        <div class="flex-wrap-container">
+            <div>
+                <p>party #1</p>
+            <div>
         <div>
-
-        <div >
-            <h1>Party main page</h1>
-                <%- include('../partials/allParties.ejs') %>
-        
-        </div>
-      </div>
-      <footer>
-          <h1>footer</h1>
-      </footer>
+    </div> -->
+  
 </div>
 </body>
 </html>
+
+
+

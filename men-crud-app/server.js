@@ -16,8 +16,12 @@ require('./config/passport');
 
 var logger = require('morgan');
 
+
+// ROUTES IMPORTS 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var ticketsRouter = require('./routes/ticket');
+var partiesRouter = require('./routes/party');
 
 var app = express();
 
@@ -30,28 +34,29 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-//// FOR AUTH
+//// FOR GOOGLE AUTH
 app.use(session({
   secret: 'SEIRocks!',
   resave: false,
   saveUninitialized: true
 }));
 
+//PASSPORT
 app.use(passport.initialize());
 app.use(passport.session());
 
 
-
-
-
-
-
-
-
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
+//ROUTES
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/tickets', ticketsRouter);
+app.use('/parties', partiesRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

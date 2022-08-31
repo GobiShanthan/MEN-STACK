@@ -11,6 +11,8 @@ router.get('/', function(req, res) {
 
 
 
+
+//------------------------------------------------------- AUTH SECTION START-------------------------------------------------------//
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
   'google',
@@ -35,6 +37,9 @@ router.get('/logout', function(req, res){
   });
  
 });
+//------------------------------------------------------- AUTH SECTION END-------------------------------------------------------//
+
+
 
 
 module.exports = router;

@@ -2,14 +2,14 @@ var express = require('express');
 var router = express.Router();
 var userCtrl = require('../controllers/users')
 
-///IMAGE UPLOAD
-const multer = require("multer");
-const upload = multer({ dest: 'uploads/'});
 
-/* GET users listing. */
+
+/* GET */
 router.get('/',userCtrl.index);
 
-router.post('/upload',upload.single('image'),userCtrl.upload)
+router.get('/userpage',userCtrl.getUser)
+
+
 
 
 module.exports = router;
