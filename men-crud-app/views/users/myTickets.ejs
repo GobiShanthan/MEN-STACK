@@ -15,8 +15,14 @@
     <div >
     <div class="parties-container">
         <h1>My Tickets</h1>
-        <%tickets.forEach((ticket,idx)=>{%>
+        <%tickets.forEach((ticket)=>{%>
         <h2><%=ticket.userId%></h2>
+        <img class="ticket-image" src='<%=ticket.partyId.image%>' alt='<%=ticket.name%>'/>
+        <p><%=ticket.partyId.name%></p>
+        <p><%=ticket.partyId.date%></p>
+        <p><%=ticket.partyId.location%></p>
+
+        <p>admit one adult</p>
         <%})%>
     </div>
 </div>

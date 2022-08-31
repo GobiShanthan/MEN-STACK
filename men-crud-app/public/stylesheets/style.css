@@ -222,6 +222,16 @@ header {
 /*------------PARTIES/:ID END-----------*/
 
 
+/*--------------TICKETS---------------------*/
+.ticket-image{
+  width:50px;
+}
+/*--------------TICKETS---------------------*/
+
+
+
+
+
 .top-container{
   display:block;
   margin-top:-250px;

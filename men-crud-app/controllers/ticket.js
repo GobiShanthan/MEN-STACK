@@ -35,7 +35,7 @@ async function createTickets(req,res,next){
 
 async function getTickets(req, res,next){
     try{
-        let tickets = await Ticket.find({userId:req.user._id})
+        let tickets = await Ticket.find({userId:req.user._id}).populate('partyId')
         res.render('users/myTickets',{user:req.user,tickets})
     }catch(error){
         console.log(error)
