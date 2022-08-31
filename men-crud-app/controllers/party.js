@@ -11,7 +11,7 @@ async function partyPage(req,res,next){
 try{
   res.render('users/createParty',{user:req.user})
 }catch(err){
-
+console.log(err)
 }
     
 }
@@ -20,8 +20,6 @@ try{
 
 // CREATE PARTY
 
-  
-  
 async function myParties(req,res,next){
   try{
     let allMyParties = await Party.find({host:req.user._id})
@@ -66,12 +64,13 @@ function base64Encode(image) {
 
           async function totalCreate(image){
             let createObj ={
-              host:req.user.id,image,...req.body
+              host:req.user._id,image,numOfAvailableTickets:req.body.numOfTickets,...req.body
             }
             try{
               await Party.create(createObj)
               res.redirect('/parties/myparties')
             }catch(err){
+              console.log(err,'create error hedsdsadkjkdjksjdksajdkjsakdjsakjdsak')
               res.render('users/index',{
                 user:req.user,
                 route:req.query.route,
@@ -105,7 +104,7 @@ async function deleteParty(req,res,next){
 
   try{
     let partyInfo = await Party.findById(req.params.partyId)
-    if(partyInfo.host === req.user._id){
+    if(partyInfo.host.toString() === req.user._id.toString()){
 
       await Party.findByIdAndDelete(req.params.partyId)
       res.redirect('/parties/myparties')
@@ -120,6 +119,10 @@ async function deleteParty(req,res,next){
 }
 
 
+//CREATE TICKET
+async function createTicket(req,res,next){
+  res.send('hit ticket controller')
+}
 
 
 
@@ -133,5 +136,6 @@ module.exports={
     createParty,
     myParties,
     deleteParty,
-    singleParty
+    singleParty,
+    createTicket,
 }

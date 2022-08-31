@@ -5,26 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>UserPage</title>
+    <title>Tickets Page</title>
 </head>
 <body>
     <div class="main-container">
         <div>
             <%-  include('../partials/header')%>
-
-              </div>
-    <!-- <div class="top-container">
-        <h1>USER PAGE</h1>
-        <div class="flex-wrap-container">
-            <div>
-                <p>party #1</p>
-            <div>
-        <div>
-    </div> -->
-  
+        </div>
+    <div >
+    <div class="parties-container">
+        <h1>My Tickets</h1>
+        <%tickets.forEach((ticket,idx)=>{%>
+        <h2><%=ticket.userId%></h2>
+        <%})%>
+    </div>
 </div>
+    </div>
 </body>
 </html>
-
-
-

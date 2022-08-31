@@ -8,16 +8,16 @@ const Schema = mongoose.Schema
 
 
 const partySchema =  new Schema({
-    host: {type: Schema.Types.ObjectId ,ref:'User'},
-    name: {type:String,require},
-    image: {type:String},
-    desc: {type:String,require},
-    location:{type:String,require},
-    date:{type:Date,require},
-    ticketRequest: [Schema.Types.ObjectId],
-    attendees:{type:String,require},
-    numOfTickets:{type:String, require},
-    price:{type:String,require},
+    host: {type: Schema.Types.ObjectId ,ref:'User',required:true},
+    name: {type:String, required:true},
+    image: {type:String, required:true},
+    desc: {type:String},
+    location:{type:String, required:true},
+    date:{type:Date,required:true},
+    attendees:{type:String},
+    numOfTickets:{type:Number, required:true},
+    numOfAvailableTickets:{type: Number, required:true},
+    price:{type:String, required:true},
   },{
     timestamps: true
   });

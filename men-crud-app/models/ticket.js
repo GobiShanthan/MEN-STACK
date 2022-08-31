@@ -8,7 +8,7 @@ const Schema = mongoose.Schema
 
 
 const ticketSchema =  new Schema({
-    userID:{type:[Schema.Types.ObjectId],ref:'Party'},
+    userId:{type:[Schema.Types.ObjectId],ref:'User'},
     partyId:{type:[Schema.Types.ObjectId],ref:'Party'}
   },{
     timestamps: true

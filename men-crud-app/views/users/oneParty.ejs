@@ -11,35 +11,42 @@
     <div class="main-container">
         <div>
             <%-  include('../partials/header')%>
-            <% if(user){ %>
-                <%-  include('../partials/sideMenu')%>
-              <% } else{ %>  
-               <%null%>
-             <% } %>
-              </div>
-    <div >
-    <div class="parties-container">
-        <div>
-            <h1><%=party.name%></h1>
+        </div>
+
+        <div class="top-party-container">
+            <div class='party-display-container'>
+                <img id="party-bg-pic" src='<%=party.image%>' alt='<%=party.name%>'/>
+                <h1><%=party.name%></h1>
+                <p><%=party.desc%></p>
+                <p><%=party.date%></p>
+                <p><%=party.location%></p>
+                <p><%=party.price%></p>
+                <%if(user){%>
+                    <%if(user._id.toString() !== party.host.toString()){%>
+          
+                        <%- include('../partials/buyTickets.ejs') %>
+                    <%}else{%>
+                    
+                        <%=null%>
+                    <%}%>
+                <%}else{%>
+                    <%=null%>
+                <%}%>
+            </div>
+            <div>
             <%if(user){%>
                 <%if(user._id.toString() === party.host.toString()){%>
-                    <h1>USER IS THE HOST</h1>
+          
                     <%- include('../partials/createTicket.ejs') %>
                 <%}else{%>
-                    <h1>User is not the host</h1>
-                    <%- include('../partials/buyTickets.ejs') %>
+                
+                    <%=null%>
                 <%}%>
             <%}else{%>
                 <%=null%>
             <%}%>
-           
-           
+            </div>
         </div>
-        
-
-       
-    </div>
-</div>
     </div>
 </body>
 </html>

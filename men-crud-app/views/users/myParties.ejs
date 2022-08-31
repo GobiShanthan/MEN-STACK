@@ -19,7 +19,9 @@
               </div>
     <div >
     <div class="parties-container">
-        <% parties.forEach(party=>{%>
+
+
+        <% parties && parties.forEach(party=>{%>
             <div class="parties-card" key="<%=party._id%>">
                 <form method="post" action="/parties/<%=party._id%>/delete">
                     <button id="delete-icon-button" type="submit">

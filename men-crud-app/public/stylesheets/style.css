@@ -9,6 +9,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   margin:0px;
+  height:100vh;
+  background-color: black;
 
 }
 /*------------INITIAL CSS END----------*/
@@ -44,7 +46,6 @@ header {
   max-width:70px;
   padding:30px;
 }
-
 
 
 @media screen and (max-width: 1024px){
@@ -83,25 +84,29 @@ header {
 
 
 
+#side-menu{
+  position:absolute;
+  top:130px;
+  left:0;
 
+}
 
 #inner-container{
   display:flex;
   flex-direction:column;
   z-index: 999;
+
 }
 
 
 .sideicon{
   width:20vw;
-  max-width:70px;
-  height:70px;
-  margin:0px 0px 10px 35px;
+  max-width:50px;
+  height:50px;
+  margin:0px 0px 10px 16px;
 
 }
 
-
-  
 
 #create-icon{
   background-color:black;
@@ -115,6 +120,7 @@ header {
   z-index: 999;
 
 }
+
 
 #userpage-icon{
   background-color:transparent;
@@ -158,16 +164,6 @@ header {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /*------------HEADER END-----------*/
 
 
@@ -183,12 +179,11 @@ header {
 
 .main-container {
   font-family: 'Satisfy', cursive;
-  background-color: black;
   min-height:100vh;
   height:100%;
   width:100vw;
   display:grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 20fr 1fr;
  
 }
 
@@ -198,6 +193,33 @@ header {
 
 
 
+/*------------PARTIES/:ID START-----------*/
+.top-party-container{
+  display:flex;
+  flex-direction: column;
+  color:red;
+  justify-content: center;
+  text-align: center;
+}
+.party-display-container{
+  background-color:white;
+  width:90vw;
+  max-width:550px;
+ height:90vw;
+  max-height:750px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius:20px;
+
+}
+#party-bg-pic{
+  max-width: 500px;
+  margin:20px;
+  border-radius:20px;
+}
+
+/*------------PARTIES/:ID END-----------*/
 
 
 .top-container{
@@ -224,6 +246,14 @@ header {
   width: 100%;
   border:solid 1px red;
 }
+
+.form-container-create{
+  width: 100vw;
+  display:flex;
+  justify-content:center;
+}
+
+
 .create-party{
   display:flex;
   flex-direction:column;
@@ -258,22 +288,17 @@ header {
   text-align:center;
   line-height: 20px;
   font-size:20px;
-  border-radius:20px;
-  position:absolute;
-  bottom:0px;
-  right:0px;
-}
+  border-radius:10px;
 
+
+  margin:10px;
+}
 
 
 #delete-icon-button{
   border:none;
   background:transparent;
 }
-
-
-
-
 
 
 .parties-container{

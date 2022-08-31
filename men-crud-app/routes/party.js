@@ -35,7 +35,7 @@ router.get('/:partyId',partyCtrl.singleParty)
 router.post('/:partyId/delete',partyCtrl.deleteParty)
 
 
-
+router.post('/:partyId/request',partyCtrl.createTicket)
 
 
 

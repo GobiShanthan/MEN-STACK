@@ -1,6 +1,6 @@
 <div >
     <div class="parties-container">
-        <% parties.forEach(party=>{%>
+        <% parties && parties.forEach(party=>{%>
             <div class="parties-card" key="<%=party._id%>">
 
             <img id="card-img" src="<%=party.image%>" alt="<%=party.name%>"></img>       
