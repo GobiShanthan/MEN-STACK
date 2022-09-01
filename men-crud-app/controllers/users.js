@@ -2,9 +2,6 @@ const User = require('../models/user')
 const Party = require('../models/party')
 
 
-//FOR IMAGE URL
-const request = require('request');
-const fs = require('fs');
 
 
 // RETURN ALL DATA

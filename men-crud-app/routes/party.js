@@ -35,8 +35,16 @@ router.get('/:partyId',partyCtrl.singleParty)
 router.post('/:partyId/delete',partyCtrl.deleteParty)
 
 
+//CREATE TICKETS THAT MATCH PARTY AND USER ID
 router.post('/:partyId/request',partyCtrl.createTicket)
 
+
+//UPDATE PARTY SHOW
+router.get('/:partyId/edit',partyCtrl.updatePartyShow)
+
+
+//UPDATE PARTY PUT REQUEST
+router.post('/:partyId/update',upload.single('image'),partyCtrl.updateParty)
 
 
 module.exports = router

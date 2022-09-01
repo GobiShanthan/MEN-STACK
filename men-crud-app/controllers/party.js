@@ -125,8 +125,100 @@ async function createTicket(req,res,next){
 }
 
 
+async function updatePartyShow(req,res,next){
+  try{
+    let party = await Party.findById(req.params.partyId)
+    res.render('users/updatePage',{user:req.user,party})
+    
+  }catch(err){
+    console.log(err)
+    res.redirect('/users')
+  }
+  
+  
+}
 
 
+
+
+async function updateParty(req,res,next){
+
+  if(req.file.path){
+    let image = base64Encode(req.file.path)
+
+    const options = {
+        method: 'POST',
+        url: 'https://api.imgur.com/3/image',
+        headers: {
+          Authorization: `Client-ID ${process.env.CLIENT_ID}`,
+        },
+        formData: {
+          image,
+          type: 'base64'
+        },
+      };
+      request(options, function(err, response) {
+        if (err) return console.log(err);
+        let imgData = JSON.parse(response.body)
+        totalCreate(imgData.data.link)
+
+        async function totalCreate(image){
+          let party = await Party.findById(req.params.partyId)
+          const {name, desc, location, date, numOfTickets} = req.body
+    
+          let createObj ={
+            host:party.host,
+            image:image,
+            numOfAvailableTickets:party.numOfAvailableTickets,
+            name:name?name:party.name,
+            desc:desc?desc:party.desc,
+            location:location?location:party.location,
+            date:date?date:party.date,
+            numOfTickets:numOfTickets?numOfTickets:party.numOfTickets,
+          }
+          try{
+            await Party.findOneAndUpdate(req.params.partyId,createObj)
+            res.redirect('/parties/myparties')
+          }catch(err){
+            console.log(err,'create error hedsdsadkjkdjksjdksajdkjsakdjsakjdsak')
+            res.render('users/index',{
+              user:req.user,
+              route:req.query.route,
+              updateSucces:'false'
+            })
+          }
+        }
+      })
+  }else{
+      let party = await Party.findById(req.params.partyId)
+      const {name, desc, location, date, numOfTickets} = req.body
+
+      let createObj ={
+        host:party.host,
+        image:party.image,
+        numOfAvailableTickets:party.numOfAvailableTickets,
+        name:name?name:party.name,
+        desc:desc?desc:party.desc,
+        location:location?location:party.location,
+        date:date?date:party.date,
+        numOfTickets:numOfTickets?numOfTickets:party.numOfTickets,
+      }
+      try{
+        await Party.findOneAndUpdate(req.params.partyId,createObj)
+        res.redirect('/parties/myparties')
+      }catch(err){
+        console.log(err,'create error hedsdsadkjkdjksjdksajdkjsakdjsakjdsak')
+        res.render('users/index',{
+          user:req.user,
+          route:req.query.route,
+          updateSucces:'false'
+        })
+      }
+    
+  }
+ 
+ 
+}
 
 
 
@@ -138,4 +230,6 @@ module.exports={
     deleteParty,
     singleParty,
     createTicket,
+    updateParty,
+    updatePartyShow
 }

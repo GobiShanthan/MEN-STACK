@@ -14,16 +14,29 @@
         </div>
     <div >
     <div class="parties-container">
-        <h1>My Tickets</h1>
-        <%tickets.forEach((ticket)=>{%>
-        <h2><%=ticket.userId%></h2>
-        <img class="ticket-image" src='<%=ticket.partyId.image%>' alt='<%=ticket.name%>'/>
-        <p><%=ticket.partyId.name%></p>
-        <p><%=ticket.partyId.date%></p>
-        <p><%=ticket.partyId.location%></p>
+      
+        <div class="ticket-main-container">
+        <%tickets && tickets.forEach((ticket)=>{%>
+            <div class="ticket-container">
+                <div class="image-container"><img class="ticket-image" src='<%=ticket.partyId.image%>' alt='<%=ticket.partyId.name%>'/></div>
+                <div class="mid-ticket-container">
+                    <p id="id-ticket"><%=ticket.partyId._id%></p>
+                    <p id="name-ticket"><%=ticket.partyId.name%></p>
+                    <p id="date-ticket"><%=ticket.partyId.date.toString().slice(0,13)%></p>
+                    <p id="location-ticket"><%=ticket.partyId.location%></p>
+                
+                </div>
+                <hr/>
+                <div class="end-ticket-container">
+                
+                    <p id = "admit-one">admit one</p>
+<img class="qr-code" src="https://i.imgur.com/u1Q5Bgy.png" title="source: imgur.com" />
 
-        <p>admit one adult</p>
+                </div>
+            </div>
+     
         <%})%>
+    </div>
     </div>
 </div>
     </div>

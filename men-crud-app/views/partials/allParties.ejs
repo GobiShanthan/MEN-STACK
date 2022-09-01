@@ -1,12 +1,13 @@
 <div >
     <div class="parties-container">
+       
         <% parties && parties.forEach(party=>{%>
             <div class="parties-card" key="<%=party._id%>">
 
             <img id="card-img" src="<%=party.image%>" alt="<%=party.name%>"></img>       
-            <h3><%=party.name%></h3>
-            <h3><%=party.date%></h3>
-            <a href="/parties/<%=party.id%>" class="form-button"> Details</a>
+            <h1><%=party.name%></h1>
+            <h3><%=party.date.toString().slice(0,15)%></h3>
+            <a href="/parties/<%=party.id%>" class="form-button-index"> Details</a>
             </div>
         <%})%>
 
