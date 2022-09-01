@@ -21,10 +21,10 @@
             <div class='party-display-container'>
                 <img id="party-bg-pic" src='<%=party.image%>' alt='<%=party.name%>'/>
                 <h1><%=party.name%></h1>
-                <p>Desc:<%=party.desc%></p>
-                <p>Date:<%=party.date.toString().slice(0,15)%></p>
-                <p>Location:<%=party.location%></p>
-                <p>Price:<%=party.price%></p>
+                <p><span class="span">Desc:</span> <%=party.desc%></p>
+                <p><span class="span">Date:</span><%=party.date.toString().slice(0,15)%></p>
+                <p><span class="span">Location:</span> <%=party.location%></p>
+                <p><span class="span"> Price:</span> <%=party.price%></p>
                 <%if(user){%>
                     <%if(user._id.toString() !== party.host.toString()){%>
           

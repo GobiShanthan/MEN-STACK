@@ -116,7 +116,6 @@ header {
   color:white;
 }
 #index-h1{
-  
   text-align:center;
   margin-top:0px;
   color: #fff;
@@ -133,7 +132,7 @@ header {
 }
 
 #all-parties{
-  margin-top:200px;
+  margin-top:0px;
 }
 
 .form-button-index{
@@ -145,8 +144,6 @@ header {
   text-shadow: none;
   text-decoration: none;
 }
-
-
 
 .form-button-index:hover{
   color:white;
@@ -206,33 +203,33 @@ header {
   justify-content: center;
   text-align: center;
 }
+
 .party-display-container{
   background-color:white;
   color:black;
   text-align: center;
   width:90vw;
   max-width:550px;
- height:90vw;
-  max-height:750px;
+  height:100%;
+  max-height:800px;
   display:block;
   margin-left:auto;
   margin-right:auto;
   border-radius:20px;
 
+
 }
+
 #party-bg-pic{
   max-width: 500px;
   margin:20px;
   border-radius:20px;
 }
 
-
-
-
-
-
-
 /*------------PARTIES/:ID END-----------*/
+
+
+
 
 
 /*--------------TICKETS---------------------*/
@@ -305,15 +302,6 @@ align-items:center;
 
 #id-ticket{
   text-align: center;
-}
-
-#name-ticket{
-}
-#date-ticket{
-  
-}
-#location-ticket{
-  
 }
 
 
@@ -498,9 +486,19 @@ align-items:center;
     0 0 5px #f09;
 
 }
+.select-style{
+  padding:10px;
+  font-size:25px;
+  border-radius:10px;
+  margin:20px;
 
+}
 footer{
   text-align:center;
+}
+
+span{
+  font-weight: bolder;
 }
 
 /*//////////////////////////////////////////////////////////////*//*//////////////////////////////////////////////////////////////*/
@@ -613,7 +611,7 @@ header {
 
 #index-h1{
   text-align:center;
-  margin-top:20px;
+  margin-top:10px;
   color: #fff;
   font-size:4vw;
   text-shadow:
@@ -628,7 +626,7 @@ header {
 }
 
 #all-parties{
-  margin-top:120px;
+  margin-top:0px;
 }
 
 
@@ -664,8 +662,6 @@ header {
   flex-wrap: wrap;
   justify-content:center;
   gap:25px;
-  margin:0vw;
-  margin-top:-100px;
   color: black;
   text-shadow:none;
 }
@@ -692,24 +688,127 @@ header {
 
 
 
-/*------------INDEX END-----------*/
+
+/*--------------TICKETS MOBILE START---------------------*/
+.ticket-main-container{
+  display:flex;
+  flex-direction: column;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+  text-shadow:0 0 0;
+  width:80%;
+
+
+}
+.ticket-container{
+display:flex;
+max-width:800px;
+max-height:90vh;
+flex-direction: column;
+background-color: #fffBef;
+justify-items: center;
+align-items:center;
+border-radius:10px;
+color:black;
+box-shadow: 0px 1px 2px 0px rgba(234, 0, 255, 0.4),
+1px 2px 4px 0px rgba(234, 0, 255, 0.5),
+2px 4px 8px 0px rgba(234, 0, 255, 0.6),
+2px 4px 16px 0px rgba(234, 0, 255, 0.7);
+}
+
+.image-container{
+  width:100%;
+  height:100%;
+}
+
+
+.ticket-image{
+  width:100%;
+  height:100%;
+}
+
+.ticket-container hr{
+  border:1px dashed grey;
+  height:90%;
+
+}
+
+#admit-one{
+display: none;
+}
+
+.mid-ticket-container{
+  text-align:left;
+  margin-left:10px;
+  display:grid;
+
+}
+
+.end-ticket-container{
+  display:grid;
+  grid-template-columns: 4fr;
+  justify-items: center;
+  padding:20px;
+align-items:center;
+}
+.qr-code{
+  width:80%;
+  
+}
+
+#id-ticket{
+  text-align: center;
+}
+
+#name-ticket{
+  font-size:34px;
+  padding:0;
+  margin:0;
+  font-weight: 700;
+}
+#date-ticket{
+  padding:0;
+  margin:0;
+  text-align: center;
+}
+#location-ticket{
+  padding:0;
+  margin:0;
+  text-align: center;
+}
+
+/*--------------TICKETS MOBILE END---------------------*/
 
 
 
+/*------------PARTIES/:ID MOBILE START-----------*/
+.top-party-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 
+.party-display-container{
+  background-color:white;
+  color:black;
+  text-align: center;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius:20px;
+  height:100%;
 
+}
 
+#party-bg-pic{
+  max-width: 90%;
+  margin:20px;
+  border-radius:20px;
+}
 
-
-/*------------INDEX END-----------*/
-
-
-
-
-
-
-
-
+/*------------PARTIES/:ID MOBILE END -----------*/
 
 
 
