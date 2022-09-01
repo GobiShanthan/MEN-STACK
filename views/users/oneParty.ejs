@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>PartyPage</title>
+    <title><%=party.name%></title>
 </head>
 <body>
     <div class="main-container">
@@ -13,14 +13,18 @@
             <%-  include('../partials/header')%>
         </div>
 
-        <div class="top-party-container">
+        <div class="main-flex-wrapper">
+            <div id="index-h1">
+                <h1><%=party.name%></h1>
+            </div>
+        
             <div class='party-display-container'>
                 <img id="party-bg-pic" src='<%=party.image%>' alt='<%=party.name%>'/>
                 <h1><%=party.name%></h1>
-                <p><%=party.desc%></p>
-                <p><%=party.date%></p>
-                <p><%=party.location%></p>
-                <p><%=party.price%></p>
+                <p>Desc:<%=party.desc%></p>
+                <p>Date:<%=party.date.toString().slice(0,15)%></p>
+                <p>Location:<%=party.location%></p>
+                <p>Price:<%=party.price%></p>
                 <%if(user){%>
                     <%if(user._id.toString() !== party.host.toString()){%>
           
@@ -32,19 +36,6 @@
                 <%}else{%>
                     <%=null%>
                 <%}%>
-            </div>
-            <div>
-            <%if(user){%>
-                <%if(user._id.toString() === party.host.toString()){%>
-          
-                    <%- include('../partials/createTicket.ejs') %>
-                <%}else{%>
-                
-                    <%=null%>
-                <%}%>
-            <%}else{%>
-                <%=null%>
-            <%}%>
             </div>
         </div>
     </div>

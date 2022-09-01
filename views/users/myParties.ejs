@@ -11,16 +11,13 @@
     <div class="main-container">
         <div>
             <%-  include('../partials/header')%>
-            <% if(user){ %>
-                <%-  include('../partials/sideMenu')%>
-              <% } else{ %>  
-               <%null%>
-             <% } %>
-              </div>
-    <div >
+        </div>
+<di class="main-flex-wrapper">
+    <div id="index-h1">
+        <h1>My Parties</h1>
+    </div>
+    <div id="all-parties">
     <div class="parties-container">
-
-
         <% parties && parties.forEach(party=>{%>
             <div class="parties-card" key="<%=party._id%>">
                 <form method="post" action="/parties/<%=party._id%>/delete">
@@ -35,9 +32,8 @@
             <a href="/parties/<%=party.id%>" class="form-button"> Details</a>
             </div>
         <%})%>
-
-       
-    </div>
+</div>
+</di>
 </div>
     </div>
 </body>
