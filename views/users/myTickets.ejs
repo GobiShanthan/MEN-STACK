@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Tickets Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main-container">
-        <div>
-            <%-  include('../partials/header')%>
-        </div>
-    <div class="main-flex-wrapper">
+      <div><%- include('../partials/header')%></div>
+      <div class="main-flex-wrapper">
         <div id="index-h1">
-            <h1>MY TICKETS</h1>
+          <h1>MY TICKETS</h1>
         </div>
-    <div class="parties-container">
-        <div class="ticket-main-container">
-        <%tickets && tickets.forEach((ticket)=>{%>
+        <div class="parties-container">
+          <div class="ticket-main-container">
+            <%tickets && tickets.forEach((ticket)=>{%>
             <div class="ticket-container">
-                <div class="image-container"><img class="ticket-image" src='<%=ticket.partyId.image%>' alt='<%=ticket.partyId.name%>'/></div>
-                <div class="mid-ticket-container">
-                    <p id="id-ticket"><%=ticket.partyId._id%></p>
-                    <p id="name-ticket"><%=ticket.partyId.name%></p>
-                    <p id="date-ticket"><%=ticket.partyId.date.toString().slice(0,13)%></p>
-                    <p id="location-ticket"><%=ticket.partyId.location%></p>
-                
-                </div>
-                <hr/>
-                <div class="end-ticket-container">
-                
-                    <p id = "admit-one">admit one</p>
-<img class="qr-code" src="https://i.imgur.com/u1Q5Bgy.png" title="source: imgur.com" />
-
-                </div>
+              <div class="image-container">
+                <img
+                  class="ticket-image"
+                  src="<%=ticket.partyId.image%>"
+                  alt="<%=ticket.partyId.name%>"
+                />
+              </div>
+              <div class="mid-ticket-container">
+                <p id="id-ticket"><%=ticket.partyId._id%></p>
+                <p id="name-ticket"><%=ticket.partyId.name%></p>
+                <p id="date-ticket">
+                  <%=ticket.partyId.date.toString().slice(0,13)%>
+                </p>
+                <p id="location-ticket"><%=ticket.partyId.location%></p>
+              </div>
+              <hr />
+              <div class="end-ticket-container">
+                <p id="admit-one">admit one</p>
+                <img
+                  class="qr-code"
+                  src="https://i.imgur.com/u1Q5Bgy.png"
+                  title="source: imgur.com"
+                />
+              </div>
             </div>
-     
-        <%})%>
+
+            <%})%>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-</div>
-    </div>
-</body>
+  </body>
 </html>

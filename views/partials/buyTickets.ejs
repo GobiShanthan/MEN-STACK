@@ -1,12 +1,12 @@
 <div>
-    <form action="/tickets/create/<%=party._id%>" method="POST">
+  <form action="/tickets/create/<%=party._id%>" method="POST">
     <%if(party.numOfTickets > 0){%>
-        <select class="select-style" name="numbOfTicks">
-        <%for(let i =1; i <= parseInt(party.numOfTickets); i++){%>
-            <option value='<%= i%>' ><%=i%></option>
-        <%}%>
+    <select class="select-style" name="numbOfTicks">
+      <%for(let i =1; i <= parseInt(party.numOfTickets); i++){%>
+      <option value="<%= i%>"><%=i%></option>
+      <%}%>
     </select>
     <%}%>
     <button class="form-button-create" type="submit">Buy Tickets</button>
-</form>
+  </form>
 </div>

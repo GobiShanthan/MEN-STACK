@@ -1,15 +1,11 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-var userCtrl = require('../controllers/users')
+var userCtrl = require("../controllers/users");
 
+/* GET MAIN PAGE USER AND ALL PARTIES*/
+router.get("/", userCtrl.index);
 
-
-/* GET */
-router.get('/',userCtrl.index);
-
-router.get('/userpage',userCtrl.getUser)
-
-
-
+//GO TO USER PAGE
+router.get("/userpage", userCtrl.getUser);
 
 module.exports = router;

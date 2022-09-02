@@ -18,13 +18,13 @@
         <h1>UPDATE PAGE</h1>
     </div>
 
-            <form class="create-party" action="/parties/<%=party._id%>/update" method="POST" enctype="multipart/form-data">
-                <input name="name" type="String" placeholder="Party Name">
-                <input name="location" type="String" placeholder="Location">
+            <form class="create-party" action="/parties/<%=party._id%>/update?_method=PUT" method="POST" enctype="multipart/form-data">
+                <input name="name" type="String" placeholder="<%=party.name%>">
+                <input name="location" type="String" placeholder="<%=party.location%>">
                 <input name="date" type="date" placeholder="Event Date" >
                 <input name="numOfTickets" type="Number" placeholder="Num of Guests">
-                <input name="price"  type="Number" placeholder="Price">
-                <textarea name="desc" type="String" placeholder="Description"></textarea>
+                <input name="price"  type="number" placeholder="<%=party.price%>">
+                <textarea name="desc" type="String" placeholder="<%=party.desc%>"></textarea>
                 <input type="file" name='image'>
                 <button class="form-button-create" type="submit">Update Party</button>
             </form>

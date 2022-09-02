@@ -20,7 +20,7 @@
     <div class="parties-container">
         <% parties && parties.forEach(party=>{%>
             <div class="parties-card" key="<%=party._id%>">
-                <form method="post" action="/parties/<%=party._id%>/delete">
+                <form method="post" action="/parties/<%=party._id%>/delete?_method=DELETE">
                     <button id="delete-icon-button" type="submit">
                         <img id="delete-icon" src="https://i.imgur.com/eeVLbU0.png" title="source: imgur.com" />
                     </button>

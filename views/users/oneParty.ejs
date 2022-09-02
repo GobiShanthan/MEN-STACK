@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%=party.name%></title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main-container">
-        <div>
-            <%-  include('../partials/header')%>
+      <div><%- include('../partials/header')%></div>
+
+      <div class="main-flex-wrapper">
+        <div id="index-h1">
+          <h1><%=party.name%></h1>
         </div>
 
-        <div class="main-flex-wrapper">
-            <div id="index-h1">
-                <h1><%=party.name%></h1>
-            </div>
-        
-            <div class='party-display-container'>
-                <img id="party-bg-pic" src='<%=party.image%>' alt='<%=party.name%>'/>
-                <h1><%=party.name%></h1>
-                <p><span class="span">Desc:</span> <%=party.desc%></p>
-                <p><span class="span">Date:</span><%=party.date.toString().slice(0,15)%></p>
-                <p><span class="span">Location:</span> <%=party.location%></p>
-                <p><span class="span"> Price:</span> <%=party.price%></p>
-                <%if(user){%>
-                    <%if(user._id.toString() !== party.host.toString()){%>
-          
-                        <%- include('../partials/buyTickets.ejs') %>
-                    <%}else{%>
-                    
-                        <%=null%>
-                    <%}%>
-                <%}else{%>
-                    <%=null%>
-                <%}%>
-            </div>
+        <div class="party-display-container">
+          <img id="party-bg-pic" src="<%=party.image%>" alt="<%=party.name%>" />
+          <h1><%=party.name%></h1>
+          <p><span class="span">Desc:</span> <%=party.desc%></p>
+          <p>
+            <span class="span">Date:</span
+            ><%=party.date.toString().slice(0,15)%>
+          </p>
+          <p><span class="span">Location:</span> <%=party.location%></p>
+          <p><span class="span"> Price:</span> <%=party.price%></p>
+          <%if(user){%> <%if(user._id.toString() !== party.host.toString()){%>
+          <%- include('../partials/buyTickets.ejs') %> <%}else{%> <%=null%>
+          <%}%> <%}else{%> <%=null%> <%}%>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

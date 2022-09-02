@@ -1,39 +1,53 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=], initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=], initial-scale=1.0" />
 
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>CreatePage</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main-container">
-        <div>
-            <%-  include('../partials/header')%>
+      <div><%- include('../partials/header')%></div>
+
+      <div class="main-flex-wrapper">
+        <div id="index-h1">
+          <h1>CREATE PARTY</h1>
         </div>
+        <form
+          class="create-party"
+          action="/parties/createparty"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <input name="name" type="String" placeholder="Party Name" required />
 
-  <div class="main-flex-wrapper">
-            <div id="index-h1">
-                <h1>CREATE PARTY</h1>
-            </div>
-            <form class="create-party" action="/parties/createparty" method="POST" enctype="multipart/form-data">
-                <input name="name" type="String" placeholder="Party Name" required>
-
-                <input name="location" type="String" placeholder="Location" required>
-                <input name="date" type="date" placeholder="Event Date" required>
-                <input name="numOfTickets" type="Number" placeholder="Num of Guests" required>
-                <input name="price"  type="Number" placeholder="Price" required>
-                <textarea name="desc" type="String" placeholder="Description" required></textarea>
-                <input type="file" name='image' required>
-                <button class="form-button-create" type="submit">Create Party</button>
-            </form>
+          <input
+            name="location"
+            type="String"
+            placeholder="Location"
+            required
+          />
+          <input name="date" type="date" placeholder="Event Date" required />
+          <input
+            name="numOfTickets"
+            type="Number"
+            placeholder="Num of Guests"
+            required
+          />
+          <input name="price" type="Number" placeholder="Price" required />
+          <textarea
+            name="desc"
+            type="String"
+            placeholder="Description"
+            required
+          ></textarea>
+          <input type="file" name="image" required />
+          <button class="form-button-create" type="submit">Create Party</button>
+        </form>
+      </div>
     </div>
-    </div>
-</body>
+  </body>
 </html>
-
-
