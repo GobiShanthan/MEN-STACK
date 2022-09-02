@@ -35,6 +35,13 @@
 
 ##Getting Started
 
+##Features
+1. Authentication and Authorization using google auth and passportjs
+2. Img upload integration
+
+
+
+##LINKS
 1. [TRELLO LINK](https://trello.com/b/K6i911P3/partyapp)
 2. [PARTYCODE HEROKU LINK](https://partycode04.herokuapp.com/users)
 3. [Linked In](https://www.linkedin.com/in/gobinath-shanthakumar-1749381b1/)

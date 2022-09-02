@@ -18,22 +18,24 @@
     </div>
     <div id="all-parties">
     <div class="parties-container">
-        <% parties && parties.forEach(party=>{%>
-            <div class="parties-card" key="<%=party._id%>">
-                <form method="post" action="/parties/<%=party._id%>/delete?_method=DELETE">
+
+
+        <% parties.forEach(p=>{%>
+            <div class="parties-card" >
+                <form  action="/parties/<%=p._id%>/delete?_method=DELETE" method="POST">
                     <button id="delete-icon-button" type="submit">
                         <img id="delete-icon" src="https://i.imgur.com/eeVLbU0.png" title="source: imgur.com" />
                     </button>
-                <form>
-                    <a href="/parties/<%=party._id%>/edit"><img id="edit-icon" src="https://i.imgur.com/4aLlVLw.png" title="source: imgur.com" /></a>
-            <img id="card-img" src="<%=party.image%>" alt="<%=party.name%>"></img>       
-            <h3><%=party.name%></h3>
-            <h3><%=party.date.toString().slice(0,15)%></h3>
-            <a href="/parties/<%=party.id%>" class="form-button"> Details</a>
+                </form>
+                    <a href="/parties/<%= p._id %>/edit"><img id="edit-icon" src="https://i.imgur.com/4aLlVLw.png" title="source: imgur.com" /></a>
+            <img id="card-img" src="<%=p.image%>" alt="<%=p.name%>"></img>       
+            <h3><%=p.name%></h3>
+            <h3><%=p.date.toString().slice(0,15)%></h3>
+            <a href="/parties/<%=p._id%>" class="form-button"> Details</a>
             </div>
         <%})%>
 </div>
-</di>
+</div>
 </div>
     </div>
 </body>

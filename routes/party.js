@@ -32,12 +32,7 @@ router.delete("/:partyId/delete", isLoggedIn, partyCtrl.deleteParty);
 router.get("/:partyId/edit", isLoggedIn, partyCtrl.updatePartyShow);
 
 //UPDATE PARTY PUT REQUEST
-router.put(
-  "/:partyId/update",
-  isLoggedIn,
-  upload.single("image"),
-  partyCtrl.updateParty
-);
+router.put("/:partyId/update",isLoggedIn,upload.single("image"),partyCtrl.updateParty);
 
 //AUTHORIZATION
 function isLoggedIn(req, res, next) {

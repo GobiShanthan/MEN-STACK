@@ -113,6 +113,8 @@ async function updatePartyShow(req, res, next) {
 }
 
 async function updateParty(req, res, next) {
+  let party = await Party.findById(req.params.partyId);
+
   if (req.file && req.file.path) {
     let image = base64Encode(req.file.path);
 
@@ -130,10 +132,9 @@ async function updateParty(req, res, next) {
     request(options, function (err, response) {
       if (err) return console.log(err);
       let imgData = JSON.parse(response.body);
-      totalCreate(imgData.data.link);
+      totalUpdate(imgData.data.link);
 
-      async function totalCreate(image) {
-        let party = await Party.findById(req.params.partyId);
+      async function totalUpdate(image) {
         const { name, desc, location, date, numOfTickets, price } = req.body;
 
         let createObj = {
@@ -148,7 +149,7 @@ async function updateParty(req, res, next) {
           numOfTickets: numOfTickets ? numOfTickets : party.numOfTickets,
         };
         try {
-          await Party.findOneAndUpdate(req.params.partyId, createObj);
+          await Party.findByIdAndUpdate(req.params.partyId, createObj);
           res.redirect("/parties/myparties");
         } catch (err) {
           console.log(err, "create error");
@@ -157,7 +158,6 @@ async function updateParty(req, res, next) {
       }
     });
   } else {
-    let party = await Party.findById(req.params.partyId);
     const { name, desc, location, date, numOfTickets, price } = req.body;
 
     let createObj = {
@@ -172,7 +172,7 @@ async function updateParty(req, res, next) {
       numOfTickets: numOfTickets ? numOfTickets : party.numOfTickets,
     };
     try {
-      await Party.findOneAndUpdate(req.params.partyId, createObj);
+      await Party.findByIdAndUpdate(req.params.partyId, createObj);
       res.redirect("/parties/myparties");
     } catch (err) {
       console.log(err, "create error hedsdsadkjkdjksjdksajdkjsakdjsakjdsak");
